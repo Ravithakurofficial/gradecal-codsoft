@@ -21,13 +21,20 @@ Follow these steps to set up and run the project on your local machine.
 ```bash
 git clone https://github.com/Ravithakurofficial/student-marks-calculator.git
 
-### Usage
-Run the project on your Tomcat Server.
+## Usage
 
-Access the application by opening your web browser and navigating to http://localhost:8080/student-marks-calculator.
+1. Run the project on your Tomcat Server.
 
-In the web page, enter the number of subjects and click "Submit."
+2. Access the application by opening your web browser and navigating to `http://localhost:8080/student-marks-calculator`.
 
-Enter the marks for each subject and click "Calculate."
+3. In the web page, enter the number of subjects and click "Submit."
 
-The result will be displayed with subject-wise marks, total, average, and grade.
+4. Enter the marks for each subject and click "Calculate."
+
+5. The result will be displayed with subject-wise marks, total, average, and grade.
+
+## Customization
+
+- You can customize the CSS styling in the provided HTML files to match your preferred design.
+
+- Modify the Java servlets (`onclick` and `gradecal`) to perform additional computations or implement different grading criteria.
