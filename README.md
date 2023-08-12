@@ -21,8 +21,7 @@ Follow these steps to set up and run the project on your local machine.
 ```bash
 git clone https://github.com/Ravithakurofficial/student-marks-calculator.git
 
-
-Usage
+### Usage
 Run the project on your Tomcat Server.
 
 Access the application by opening your web browser and navigating to http://localhost:8080/student-marks-calculator.
