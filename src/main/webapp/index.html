@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student Marks Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    #container {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    form {
+        margin-top: 15px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    button[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    #EnteredData {
+        margin-top: 30px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+</style>
+</head>
+<body>
+    <div id="container">
+        <form id="form">
+            <table>
+                <tr>
+                    <td><label for="nosub">Enter The No Of Subjects:</label></td>
+                    <td><input type="number" id="nosub" name="nosub"></td>
+                </tr>
+                
+                <input type="hidden" id="hidden_nosub" name="hidden_nosub" value="">
+                <tr>
+                    <td colspan="2"><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div id="EnteredData">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#form").on('submit', function (event) {
+                event.preventDefault();
+
+                var formData = $(this).serialize();
+
+                var nosubValue = $("#nosub").val();
+                
+                $("#hidden_nosub").val(nosubValue);
+
+                $.ajax({
+                    url: "onclick",
+                    data: formData,
+                    type: 'post',
+                    success: function (data) {
+                        $("#EnteredData").html(data);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
